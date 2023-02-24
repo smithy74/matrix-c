@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -c -Wall -Wextra -Werror -std=c11
 LDFLAGS = -O2 -Wall -Wextra -Werror -std=c11
-SOURCE=$(wildcard s21_m*.c)
+SOURCE=$(wildcard m*.c)
 OS := $(shell uname)
 
 ifeq ($(OS), Linux)  # Linux
@@ -10,8 +10,8 @@ else
 	ADD_LIB = -lcheck -lm -lpthread
 endif
 
-PROJECTNAME=s21_matrix
-TEST_FILE=s21_test.c
+PROJECTNAME=matrix
+TEST_FILE=test.c
 
 all: clean ${PROJECTNAME}.a
 
